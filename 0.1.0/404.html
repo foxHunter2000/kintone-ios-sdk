@@ -12,7 +12,7 @@
       
         <meta name="description" content="The SDK of kintone REST API client on ios">
       
-      
+      https://blog.google/products/ads-commerce/preparing-developers-and-advertisers-for-policy-updates/
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -493,7 +493,7 @@
       AppDeployStatus
     </a>
   </li>
-
+Yep 
         
           
           
@@ -667,7 +667,59 @@
     </nav>
   </li>
 
-        
+        Ok https://blog.google/products/ads-commerce/preparing-developers-and-advertisers-for-policy-updates/h>
+#define WS_LOG_DOMAIN LOG_DOMAIN_MAIN
+
+#include <glib.h>
+
+#include <stdio.h>
+#include <errno.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <signal.h>
+
+#ifdef _WIN32
+#include <wsutil/unicode-utils.h>
+#include <wsutil/win32-utils.h>
+#endif
+
+#include <wsutil/filesystem.h>
+#include <wsutil/socket.h>
+#include <wsutil/inet_addr.h>
+#include <wsutil/please_report_bug.h>
+#include <wsutil/wslog.h>
+#include <wsutil/ws_getopt.h>
+
+#ifndef _WIN32
+#include <sys/un.h>
+#include <netinet/tcp.h>
+#endif
+
+#include <wsutil/strtoi.h>
+#include <ui/version_info.h>
+
+#include "sharkd.h"
+
+#ifdef _WIN32
+/* for windows support TCP sockets */
+# define SHARKD_TCP_SUPPORT
+#else
+/* for other system support only local sockets */
+# define SHARKD_UNIX_SUPPORT
+#endif
+
+static int mode = 0;
+static socket_handle_t _server_fd = INVALID_SOCKET;
+
+static socket_handle_t
+socket_init(char *path)
+{
+	socket_handle_t fd = INVALID_SOCKET;
+	char *err_msg;
+
+	err_msg = ws_init_sockets();
+	if (err_msg != NULL) {
+		ws_warning("ERROR: 
           
           
           
